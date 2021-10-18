@@ -5,7 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OrderActivity">
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tab_container"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabIndicatorColor="@color/black"
+        />
     <androidx.viewpager.widget.ViewPager
+        android:layout_marginTop="50dp"
         android:id="@+id/order_view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
