@@ -1,11 +1,16 @@
 package com.example.shuttle
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.inflate
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.content.getSystemService
 import androidx.core.content.res.ColorStateListInflaterCompat.inflate
 import androidx.core.content.res.ComplexColorCompat.inflate
@@ -34,6 +39,10 @@ class ViewPagerAdapter (private val context : Context) : PagerAdapter() {
         val view = inflater.inflate(R.layout.pager_layout, container, false)
         view.findViewById<ImageView>(R.id.image_src).setImageResource(Image[position])
         container.addView(view)
+        view.setOnClickListener {
+            var intent : Intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.naver.com"))
+            context.startActivity(intent)
+        }
         return view
     }
 
