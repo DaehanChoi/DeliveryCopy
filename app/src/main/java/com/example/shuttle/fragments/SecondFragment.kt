@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.shuttle.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +36,10 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false)
+        val view =  inflater.inflate(R.layout.fragment_second, container, false)
+        view.findViewById<TextView>(R.id.secondfragmenttext).text = "이게 되나안되나 .. ㅜ"
+
+        return view
     }
 
     companion object {

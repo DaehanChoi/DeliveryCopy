@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Shuttle">
         <activity
+            android:name=".infomation.InfoActivity"
+            android:exported="true" />
+        <activity
             android:name=".OrderActivity"
             android:exported="true" />
         <activity

@@ -1,11 +1,16 @@
 package com.example.shuttle.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.example.shuttle.R
+import com.example.shuttle.infomation.InfoActivity
+import com.example.shuttle.model.ListContent
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +32,7 @@ class FirstFragment : Fragment() {
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -35,7 +41,21 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        val view = inflater.inflate(R.layout.fragment_first, container, false)
+        val contents = arrayOf(
+            ListContent(R.drawable.img_1,"맛없는거", "한식"),
+            ListContent(R.drawable.img_2,"맛~~~없는거", "일식"),
+            ListContent(R.drawable.img_3,"맛잇는거", "3식")
+        )
+        val listAdapter = ListItemAdapter(requireContext(), contents)
+
+        val listview = view.findViewById<RecyclerView>(R.id.first_listview)
+        listview?.adapter = listAdapter
+        listview.setOnClickListener {
+            val intent = Intent(requireContext(), InfoActivity::class.java)
+            startActivity(intent)
+        }
+        return view
     }
 
     companion object {
