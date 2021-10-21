@@ -12,3 +12,14 @@ viewpager - tab 연결
 
 ## 리사이클러 뷰 사용시 참고사항
 > 레이아웃에서 layoutmanager 설정하는 것 잊지 말것 
+
+
+## okHttp
+> 안드로이드 9버젼의 경우 https를 강제하고있음 이에 유의
+> > CLEARTEXT communication to XXXX not permitted by network security policy 경고
+> > 해결법 
+> > ```
+> > <application
+...
+android:usesCleartextTraffic="true">
+> > ```
