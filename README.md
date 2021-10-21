@@ -15,11 +15,11 @@ viewpager - tab 연결
 
 
 ## okHttp
-> 안드로이드 9버젼의 경우 https를 강제하고있음 이에 유의
+> 안드로이드 9버젼의 경우 https를 강제하고있음 이에 유의 + internet permission 설정을 이후에 했을 경우 app을 vm에서 삭제한후 다시 빌드하면  
 > > CLEARTEXT communication to XXXX not permitted by network security policy 경고
 > > 해결법 
 > > ```
 > > <application
-...
-android:usesCleartextTraffic="true">
+> > ...
+> > android:usesCleartextTraffic="true">
 > > ```
