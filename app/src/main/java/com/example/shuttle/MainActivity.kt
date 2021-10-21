@@ -3,8 +3,10 @@ package com.example.shuttle
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.GridView
 import androidx.viewpager.widget.ViewPager
+import com.example.shuttle.http.HttpActivity
 import com.example.shuttle.model.Food
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +38,10 @@ class MainActivity : AppCompatActivity() {
         }
         viewpager = findViewById(R.id.slider)
         viewpager.adapter = ViewPagerAdapter(this)
-
+        val button = findViewById<Button>(R.id.main_button)
+        button.setOnClickListener{
+            val intent = Intent(this, HttpActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -10,3 +10,9 @@ data class ListContent(
     var title : String,
     var category : String
 )
+
+data class UserData(
+    var name : String,
+    var age : Int,
+    var pref : String
+)
