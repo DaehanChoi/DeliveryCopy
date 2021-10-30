@@ -51,10 +51,7 @@ class FirstFragment : Fragment() {
 
         val listview = view.findViewById<RecyclerView>(R.id.first_listview)
         listview?.adapter = listAdapter
-        listview.setOnClickListener {
-            val intent = Intent(requireContext(), InfoActivity::class.java)
-            startActivity(intent)
-        }
+
         return view
     }
 
